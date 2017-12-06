@@ -47,3 +47,13 @@ function returnsHtmlwithNoNotes() {
 
 };
 returnsHtmlwithNoNotes()
+
+function returnsHtmlWithShortenedNote() {
+  var describe  = "Returns html string with shortened note";
+  var noteList = new NoteListDouble([new NoteDouble('12345678901011121314151617181920')]);
+  var view = new NoteListView(noteList);
+  var htmlString = "<ul><li><div>12345678901011121314...</div></li></ul>"
+  console.log(view.render()) 
+  assert.isEqual(describe, view.render(), htmlString );
+};
+returnsHtmlWithShortenedNote()
