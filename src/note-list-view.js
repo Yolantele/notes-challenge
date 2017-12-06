@@ -1,10 +1,15 @@
 (function(exports) {
 function NoteListView(noteList) {
-  this._view = noteList;
+  this._noteList = noteList;
 };
 
-NoteListView.prototype.view = function() {
-  return this._view;
+NoteListView.prototype.render = function() {
+  var htmlString = ""
+  this._noteList.list().forEach(function(note){
+    htmlString += `<li><div>${note.text()}</div></li>`
+  });
+  return (`<ul>${htmlString}</ul>`)
 };
+
 exports.NoteListView = NoteListView;
 })(this);
