@@ -3,9 +3,6 @@
 
   function NoteController(noteList, noteListView, singleNoteView) {
     this._noteList = noteList
-    this._noteList.addNote('Favourite drink: seltzer');
-    this._noteList.addNote('Favourite food: hot dog');
-    this._noteList.addNote('Favourite singer: Britney Spears');
     this._noteListView = new noteListView(this._noteList);
     this._singleNoteView = singleNoteView;
   }
@@ -27,12 +24,13 @@
   };
 
   NoteController.prototype.catchSubmit = function () {
+    var that = this;
     var form = document.getElementById('text')
     form.addEventListener('submit', function (event) {
-
       event.preventDefault();
-      console.log(event);
-      console.log(event.srcElement.innerText)
+      var noteText = event.srcElement.innerText;
+      that._noteList.addNote(noteText);
+      appDiv.innerHTML = that._noteListView.render();
     })
   }
 

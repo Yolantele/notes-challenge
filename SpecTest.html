@@ -6,8 +6,11 @@
 
 </style>
 <!-- <link rel="stylesheet" type="text/css" href="style/SpecTest.css"> -->
-
-    <div id="app">
+    <form style="display:none" id="text" action="#notes" method="post" >
+      <textarea name="name" rows="8" cols="80"></textarea>
+      <input type="submit" name="" value="submit">
+    </form>
+    <div style="display:none" id="app">
 
     </div>
 
@@ -19,8 +22,8 @@
      <script src="src/note.js"></script>
       <script src="src/note-list-model.js"></script>
       <script src="src/note-list-view.js"></script>
-      <script src="src/note-controller.js"></script>
       <script src="src/single-note-view.js"></script>
+      <script src="src/note-controller.js"></script>
 
 
   <!-- include spec files here... -->

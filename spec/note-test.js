@@ -1,5 +1,6 @@
 function newNoteHasIdOfZero() {
-  var describe = 'New Note has ID of 1';
+  reset();
+  var describe = 'New Note has ID of 0';
   var note = new Note('note 1');
   assert.isEqual(describe, note.id(), 0);
 }
@@ -7,9 +8,11 @@ function newNoteHasIdOfZero() {
 newNoteHasIdOfZero();
 
 function secondNoteHasIdOfOne() {
-  var describe = 'New Note has ID of 1';
-  var note = new Note('note 2');
-  assert.isEqual(describe, note.id(), 1);
+  reset();
+  var describe = 'Second Note has ID of 1';
+  var note = new Note('note 1');
+  var note2 = new Note('note 2');
+  assert.isEqual(describe, note2.id(), 1);
 }
 
 secondNoteHasIdOfOne()

@@ -2,6 +2,10 @@
 
   var id = 0;
 
+  function reset() {
+    id = 0;
+  }
+
   function Note(text) {
     this._text = text;
     this._id = id;
@@ -17,4 +21,5 @@
   };
 
   exports.Note = Note;
+  exports.reset = reset;
 })(this);
