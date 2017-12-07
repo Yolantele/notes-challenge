@@ -26,9 +26,20 @@
     })
   };
 
+  NoteController.prototype.catchSubmit = function () {
+    var form = document.getElementById('text')
+    form.addEventListener('submit', function (event) {
+
+      event.preventDefault();
+      console.log(event);
+      console.log(event.srcElement.innerText)
+    })
+  }
+
   exports.NoteController = NoteController;
 })(this);
 
 var noteController = new NoteController(new NoteList(Note), NoteListView, SingleNoteView);
 noteController.insertHTML();
 noteController.addingEventListener();
+noteController.catchSubmit();
